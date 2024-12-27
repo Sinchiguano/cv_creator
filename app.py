@@ -77,6 +77,8 @@ app.config['MAX_CONTENT_LENGTH'] = 2 * 1024 * 1024  # 2MB max file size
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 
 
+python("hello world... testing...")
+
 @app.route('/')
 def index():
     return render_template('form.html')
