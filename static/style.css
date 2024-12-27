@@ -1,0 +1,133 @@
+/* General body and container styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    padding: 20px;
+}
+
+.container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+h1 {
+    color: #007bff;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.card-header {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+}
+
+/* Form sections */
+.card-body {
+    padding: 20px;
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+.form-control {
+    border-radius: 6px;
+    box-shadow: none;
+    border: 1px solid #ced4da;
+    transition: all 0.3s;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.btn {
+    border-radius: 6px;
+    padding: 10px 20px;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border: none;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Input fields inside the form for personal, education, and work sections */
+.form-control.mb-2 {
+    margin-bottom: 10px;
+}
+
+.mb-3 {
+    margin-bottom: 15px;
+}
+
+/* Add buttons styling */
+#add-education, #add-work, #add-course, #add-skill {
+    margin-top: 10px;
+}
+
+/* Add a little gap between sections */
+.card {
+    margin-bottom: 20px;
+}
+
+/* Photo upload section */
+#photo {
+    border: none;
+    padding: 0;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+}
+
+/* Footer (submit button) */
+.btn-primary.w-100 {
+    margin-top: 20px;
+}
+
+/* Education, work experience, courses, and skills entries styling */
+.education-entry, .work-entry, .course-entry, .skill-entry {
+    display: flex;
+    flex-direction: column;
+}
+
+.education-entry input,
+.work-entry input,
+.course-entry input,
+.skill-entry input {
+    margin-bottom: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .card-header {
+        font-size: 16px;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}

@@ -1,4 +1,70 @@
 
+# from flask import Flask, render_template, request, redirect, url_for, flash, session
+# from flask_sqlalchemy import SQLAlchemy
+# from fpdf import FPDF
+# import os
+
+# app = Flask(__name__)
+# app.config['SECRET_KEY'] = 'your_secret_key'
+# app.config['UPLOAD_FOLDER'] = 'uploads'
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
+# app.config['MAX_CONTENT_LENGTH'] = 2 * 1024 * 1024  # 2MB max file size
+
+# # Initialize the database
+# db = SQLAlchemy(app)
+
+# # User Model
+# class User(db.Model):
+#     id = db.Column(db.Integer, primary_key=True)
+#     username = db.Column(db.String(120), unique=True, nullable=False)
+#     password = db.Column(db.String(120), nullable=False)
+
+# # Ensure upload directory exists
+# os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
+
+# @app.route('/')
+# def index():
+#     return render_template('index.html')
+
+# @app.route('/login', methods=['GET', 'POST'])
+# def login():
+#     if request.method == 'POST':
+#         username = request.form['username']
+#         password = request.form['password']
+#         user = User.query.filter_by(username=username).first()
+        
+#         if user and user.password == password:
+#             session['user_id'] = user.id
+#             return redirect(url_for('index'))
+#         else:
+#             flash('Invalid credentials, please try again.', 'danger')
+    
+#     return render_template('login.html')
+
+# @app.route('/register', methods=['GET', 'POST'])
+# def register():
+#     if request.method == 'POST':
+#         username = request.form['username']
+#         password = request.form['password']
+#         user = User.query.filter_by(username=username).first()
+        
+#         if user:
+#             flash('Username already exists, choose a different one.', 'danger')
+#         else:
+#             new_user = User(username=username, password=password)
+#             db.session.add(new_user)
+#             db.session.commit()
+#             flash('Registration successful! You can now log in.', 'success')
+#             return redirect(url_for('login'))
+    
+#     return render_template('register.html')
+
+
+
+
+
+
+
 from flask import Flask, render_template, request, redirect, url_for, send_file
 from fpdf import FPDF
 import os
@@ -10,8 +76,13 @@ app.config['MAX_CONTENT_LENGTH'] = 2 * 1024 * 1024  # 2MB max file size
 # Ensure upload directory exists
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 
+
 @app.route('/')
 def index():
+    return render_template('form.html')
+
+@app.route('/cvcreator')
+def cvcreator():
     return render_template('form.html')
 
 @app.route('/generate', methods=['POST'])
